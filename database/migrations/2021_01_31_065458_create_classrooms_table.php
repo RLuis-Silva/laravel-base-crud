@@ -14,7 +14,10 @@ class CreateClassroomsTable extends Migration
     public function up()
     {
         Schema::create('classrooms', function (Blueprint $table) {
+            // creazione attributi tabella 'Classroom'
             $table->id();
+            $table->string('name', 10)-> unique(); //unique ci permette di avere sempre nomi di classroom univoche
+            $table->text('description');
             $table->timestamps();
         });
     }
