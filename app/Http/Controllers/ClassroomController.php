@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Classroom;
 
 class ClassroomController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. (ARCHIVIO)
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return 'classrooms index page';
+        // return 'classrooms index page';
+
+        /* prendo dati dal DB */ 
+        // metodo all() prende tutti i dati presenti nel ns DB
+        $classrooms = Classroom::all();
+        // dd($classrooms);
+
+        return view('classrooms.index', compact('classrooms'));
     }
 
     /**
