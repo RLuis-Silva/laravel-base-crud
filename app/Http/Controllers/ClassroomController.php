@@ -53,7 +53,11 @@ class ClassroomController extends Controller
      */
     public function show($id)
     {
-        //
+        // return 'SHOW DETAIL CLASS'.$id;
+        $classroom = Classroom:: find($id);
+        // dd($classroom);
+
+        return view('classrooms.show', compact('classroom') );
     }
 
     /**
